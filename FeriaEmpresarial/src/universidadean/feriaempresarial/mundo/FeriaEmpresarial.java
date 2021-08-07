@@ -536,24 +536,21 @@ public class FeriaEmpresarial {
     }
 
     /**
-     * Método para la extensión2
-     * @return respuesta2
+     * Método para verificar puento de equilibrio
+     * @return estado punto de equilibrio
      */
     public String metodo2() {
-    	 int numPuestosOcupados = 0;
-         int totalPuestos = puestos.length;
-         double porcentaje = 0;
+    	
+    	double porcOcu = porcentajeOcupacion();
 
-         for (Puesto puesto : puestos) {
-             if (puesto.estaOcupado()) {
-                 numPuestosOcupados++;
-             }
-         }
-
-         porcentaje = (double) numPuestosOcupados / totalPuestos;
-         porcentaje = porcentaje * 100;
-
-        return "Respuesta 2";
+    	double varPorc = 60.00;
+    	
+    	if(porcOcu > varPorc) {
+    		  return "El punto de equilibrio se ha cumplido";
+    	} else {
+    		  return "El punto de equilibrio no se ha cumplido";
+    	}
+    	
     }
 
 }
