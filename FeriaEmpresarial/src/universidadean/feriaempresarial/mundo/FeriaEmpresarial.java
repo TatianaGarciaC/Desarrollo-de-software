@@ -511,6 +511,7 @@ public class FeriaEmpresarial {
     	//Variable que almacena los datos de la zona con más expositores
     	PuestoZonaDTO MayorCantExp = new PuestoZonaDTO();
     	MayorCantExp.setNumExp(0);
+    	MayorCantExp.setZona("");
     	
     	/*se recorre la lista de zonas con expositores y se va 
     	reemplazando la variable con mayor expoxitores*/
@@ -524,9 +525,13 @@ public class FeriaEmpresarial {
     	}
 
     	//imprimir resultado en pantalla
-        return "Respuesta 1: La zona con mayor número de expositores "
-        		+ "es la zona " + MayorCantExp.getZona() + " con " + MayorCantExp.getNumExp() 
-        		+ " expositores";
+    	if(MayorCantExp.getZona()!="") {
+            return "Respuesta 1: La zona con mayor número de expositores "
+            		+ "es la zona " + MayorCantExp.getZona() + " con " + MayorCantExp.getNumExp() 
+            		+ " expositores";
+    	} else {
+            return "Respuesta 1: aun no hay empresas expositoras registradas";
+    	}    	
 
     }
 
